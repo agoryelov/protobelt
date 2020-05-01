@@ -7,6 +7,7 @@ const validate      = require('./middleware/validate')
 const limit         = require('./middleware/limit')
 const database      = require('./database')
 
+const path          = require('path')
 const server        = require('http').createServer(app)
 const socket        = require('./casino/socket')(server)
 const casino        = require('./casino/casino')(socket)
@@ -14,6 +15,8 @@ const casino        = require('./casino/casino')(socket)
 const { routerProtected, routerUnprotected } = require('./routes')
 
 app.set('casino', casino)
+
+app.use(express.static(path.join(__dirname, '../build')))
 
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json())
