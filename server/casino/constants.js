@@ -1,7 +1,7 @@
 /* Intervals in ms */
 
 const INTERVALS = {
-    bettingTime : (60 * 1000), // 60 sec
+    bettingTime : (120 * 1000), // 2 mins
     bufferTime : 4000, // 4 sec
     processTime : 10000  // 10 sec
 }
