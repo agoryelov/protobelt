@@ -20,7 +20,7 @@ const { routerProtected, routerUnprotected } = require('./routes')
 
 app.set('casino', casino)
 
-app.use(express.static(path.join(__dirname, '../build')));
+app.use(express.static(path.join(__dirname, '../client/build')));
 
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json())
